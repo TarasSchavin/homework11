@@ -1,0 +1,157 @@
+body {
+    font-weight: bold;
+    background: gray;
+    color: #fff;
+}
+
+.menu_wrapper {
+    position: relative;
+}
+
+#btn {
+    display: none;
+}
+
+.wrapper {
+    display: inline-block;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    transition: all .8s ease-in-out;
+}
+
+.wrapper:before,
+.wrapper:after,
+.wrapper span {
+    content: "";
+    width: 30px;
+    height: 3px; 
+    position: absolute;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    transition: all .8s;
+}
+
+.wrapper:before {
+    top: 35%;
+}
+
+.wrapper::after {
+    top: 65%;
+}
+
+#btn:checked~.wrapper:before {
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+#btn:checked~.wrapper:after {
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+#btn:checked~.wrapper>span {
+    width: 0;
+    background: rgba(121, 121, 121, 0);;
+}
+
+#btn:checked+.menu {
+    transform: translateX(0);
+}
+
+#btn:checked~.wrapper {
+    transform: translateX(-400px);
+}
+
+#btn:checked~.content {
+    transform: translateX(-400px);
+}
+
+.menu {
+    width: 400px;
+    position: fixed;
+    inset: 0 0 0 auto;
+    transform: translateX(100%);
+    background: #fff;
+    padding: 50px 50px 0;
+    transition: all .8s ease-in-out;
+}
+
+.contacts {
+    list-style: none;
+    text-transform: uppercase;
+    padding: 0 0 20px;
+    margin: 0;
+}
+
+.contacts>li {
+    padding: 20px 0;
+}
+
+
+li span {
+    padding-right: 15px;
+}
+
+.contacts a {
+    color: gray;
+    text-decoration: none;
+}
+
+.contacts a:hover {
+    color: rgb(240, 16, 221);
+}
+
+.button:hover {
+    background: rgb(9, 31, 233);
+}
+
+.button {
+    padding: 20px 30px;
+    background: rgb(241, 7, 7);
+    border: 1px solid rgb(240, 16, 221);
+    border-radius: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.button:hover {
+    box-shadow: inset 1px 1px 2px #fff, 2px 3px 2px rgba(0, 0, 0, .5);
+}
+
+.content {
+    position: relative;
+    transition: all .8s ease-in-out;
+}
+
+.hero_section {
+    max-height: 100vh;
+    padding: 150px 0 20px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 150px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 300;
+}
+
+.logo {
+    display: inline-block;
+    position: relative;
+    top: 50px;
+    left: 80px;
+    text-transform: uppercase;
+    font-size: 24px;
+}
